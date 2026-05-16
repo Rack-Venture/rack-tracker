@@ -6,6 +6,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+!.env.local.example
 
 # dataset — 원본 영상/대용량 파일 제외, 스크립트·문서는 추적
 171204_pose1/**
