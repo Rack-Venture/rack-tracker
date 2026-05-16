@@ -54,6 +54,16 @@
 - Commit immediately after each approved work unit. Do not accumulate changes across multiple work units and commit later.
 - If files changed without a matching management-document update, treat that as a workflow miss and correct it in the same work session.
 
+## Archive Policy
+
+- `docs/mvp-v1/` and `docs/mvp-v2/` are historical archives migrated from the predecessor repository (rack-tracker-forked).
+  - Issue numbers inside those documents refer to the old repository's GitHub issues, not rack-venture issues.
+  - Do not create new management documents under these directories.
+  - Do not modify archive documents to update issue numbers; the mismatch is expected and acceptable.
+- `docs/issues/` is the sole location for rack-venture management documents.
+  - Issue numbers must correspond to GitHub issues in the rack-venture organization repository.
+  - Workflow: create a rack-venture GitHub issue first → use the assigned number for the branch name and management document file name → create `docs/issues/{type}/{N}-{slug}.md`.
+
 ## Cleanup Rule
 
 - For repository cleanup work, record keep, remove, move, or archive decisions in the relevant management document.
