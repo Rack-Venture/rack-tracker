@@ -111,6 +111,19 @@ Claude Code를 사용하는 팀원은 아래 순서로 문서를 읽는다:
 
 ---
 
+## Git 훅 활성화
+
+pre-commit 훅이 `.githooks/`에 있다. 클론 후 아래 명령으로 한 번만 활성화한다:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+이 훅은 파일 변경 커밋 시 `docs/issues/` 아래 관리 문서가 함께 스테이징됐는지 검사한다.  
+관리 문서 없이 커밋하면 차단된다.
+
+---
+
 ## GitHub 워크플로우
 
 현재 CI/CD 파이프라인은 구성되어 있지 않다.  
@@ -132,6 +145,7 @@ Claude Code를 사용하는 팀원은 아래 순서로 문서를 읽는다:
 ## 세팅 완료 체크리스트
 
 - [ ] Node.js, uv, gh 설치 완료
+- [ ] `git config core.hooksPath .githooks` 실행
 - [ ] `frontend/npm install` 완료
 - [ ] `backend/uv sync` 완료
 - [ ] `backend/.env`에 `ANTHROPIC_API_KEY` 입력
