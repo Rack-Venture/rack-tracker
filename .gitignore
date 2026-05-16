@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment variables — never commit real keys
+.env
+.env.*
+!.env.example
+
+# dataset — 원본 영상/대용량 파일 제외, 스크립트·문서는 추적
+171204_pose1/**
+!171204_pose1/171204_pose1/
+171204_pose1/171204_pose1/**
+!171204_pose1/171204_pose1/trim_hd_videos.py
+!171204_pose1/171204_pose1/prepare_gt_aligned_clips.py
+!171204_pose1/171204_pose1/hdVideos_2min/
+171204_pose1/171204_pose1/hdVideos_2min/**
+!171204_pose1/171204_pose1/hdVideos_2min/README.md
+!171204_pose1/171204_pose1/hdVideos_2min/metadata.json
+!171204_pose1/171204_pose1/hdVideos_gt_aligned/
+171204_pose1/171204_pose1/hdVideos_gt_aligned/**
+!171204_pose1/171204_pose1/hdVideos_gt_aligned/metadata.json
+
+# models — git 미추적, 별도 다운로드 필요 (README 참고)
+**/models/mediapipe/*.task
+
+# videos
+backend/src/video/
+
+# temp files
+backend/tmp/
+backend/docs/tmp/
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+
+# claude
+.claude/

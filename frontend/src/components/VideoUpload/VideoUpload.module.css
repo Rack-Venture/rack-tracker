@@ -1,0 +1,95 @@
+.uploadArea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 2.4rem 1.6rem;
+    border: 1.5px dashed var(--color-border-white-20);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-white-5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.uploadArea:hover {
+    border-color: var(--color-border-white-20);
+    background-color: var(--color-bg-white-10);
+}
+
+.selected {
+    border-style: solid;
+    border-color: var(--color-success);
+    background-color: var(--color-bg-success-20);
+}
+
+.selected:hover {
+    background-color: var(--color-bg-success-20);
+    border-color: var(--color-success-fg);
+}
+
+.selected .icon {
+    color: var(--color-success-fg);
+}
+
+.selected .label {
+    color: var(--color-success-fg);
+}
+
+.selected .sub {
+    color: var(--color-success);
+}
+
+.input {
+    display: none;
+}
+
+.icon {
+    color: var(--color-text-sub);
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.label {
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-sub);
+}
+
+.sub {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+}
+
+.meta {
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.metaChip {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-round);
+    border: 1px solid var(--color-success);
+    background: var(--color-bg-success-20);
+    color: var(--color-success-fg);
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.04em;
+}

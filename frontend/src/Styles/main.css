@@ -1,0 +1,139 @@
+:root{
+    font-size: 62.5%;
+
+    /* ===== variables ===== */
+
+    /* color */
+    --color-bg:         #0A0A0C;
+    --color-bg-positive:    #0D93F2;
+    --color-bg-negative:    rgba(255,255,255,0.05);
+    --color-bg-negative-hover:    rgba(255,255,255,0.1);
+
+    --color-surface:    #16161A;
+    --color-surface-2:  #1A1B26;
+
+    --color-success:    #22C55E;
+    --color-success-fg: #4ADE80;
+    --color-error:      #EF4444;
+    --color-accent:     #00F2FF;
+
+    --color-text:         #FFFFFF;
+    --color-text-positive: #0D93F2;
+    --color-text-plus: #00F2FF;
+    --color-text-sub:     #9CA3AF;
+    --color-text-sub-2:   #D1D5DB;
+    --color-text-muted:   #6B7280;
+    --color-text-disabled:#4B5563;
+    --color-text-link:    #93C5FD;
+
+    --color-border-white-80: color-mix(in srgb, var(--color-bg-surface) 80% , transparent);
+    --color-border-negative:rgba(255,255,255,0.1);
+    --color-border-negative-hover:rgba(255,255,255,0.1);
+
+    --color-outline-negative:rgba(255,255,255,0.5);
+
+    /* opacity tokens (from Figma SVG) */
+    /* bg fill */
+    --color-bg-positive-5:   color-mix(in srgb, var(--color-bg-positive)  5%, transparent);
+    --color-bg-positive-10:  color-mix(in srgb, var(--color-bg-positive) 10%, transparent);
+    --color-bg-positive-20:  color-mix(in srgb, var(--color-bg-positive) 20%, transparent);
+    --color-bg-positive-30:  color-mix(in srgb, var(--color-bg-positive) 30%, transparent);
+    --color-bg-white-5:      color-mix(in srgb, white  5%, transparent);
+    --color-bg-white-10:     color-mix(in srgb, white 10%, transparent);
+    --color-bg-surface-50:   color-mix(in srgb, var(--color-surface) 50%, transparent);
+    --color-bg-surface-80:   color-mix(in srgb, var(--color-surface) 80%, transparent);
+    --color-bg-black-20:     color-mix(in srgb, black 20%, transparent);
+    --color-bg-black-30:     color-mix(in srgb, black 30%, transparent);
+    --color-bg-black-40:     color-mix(in srgb, black 40%, transparent);
+    --color-bg-black-50:     color-mix(in srgb, black 50%, transparent);
+    --color-bg-success-20:   color-mix(in srgb, var(--color-success) 20%, transparent);
+
+    /* border stroke */
+    --color-border-positive-20: color-mix(in srgb, var(--color-bg-positive) 20%, transparent);
+    --color-border-positive-30: color-mix(in srgb, var(--color-bg-positive) 30%, transparent);
+    --color-border-positive-50: color-mix(in srgb, var(--color-bg-positive) 50%, transparent);
+    --color-border-white-5:     color-mix(in srgb, white  5%, transparent);
+    --color-border-white-10:    color-mix(in srgb, white 10%, transparent);
+    --color-border-white-20:    color-mix(in srgb, white 20%, transparent);
+
+    /* thypography */
+    --font-family: 'Pretendard', sans-serif;
+    
+    /* font size */
+    --font-size-xxm: 1rem;
+    --font-size-xm: 1.2rem;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.6rem;
+    --font-size-lg: 1.8rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 3.2rem;
+    --font-size-display: 7.2rem;
+
+    /* font weight */
+    --font-weight-medium: 400;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --width-container: 128rem;
+
+    /* radius */
+    --border-radius: 0.4rem;
+    --border-radius-round: 999rem;
+
+    /* Layout */
+
+    /* Border */
+
+    /* shadow */
+
+    /* animation */
+
+    /* z-index */
+    --z-index-background: -1;
+
+
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+}
+
+html, body, #root{
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+}
+
+.container{
+    width: var(--width-container);
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+@keyframes uploadImpulse {
+    0%   { border-color: var(--color-border-white-20); background-color: var(--color-bg-white-5); }
+    50%  { border-color: var(--color-bg-positive);     background-color: var(--color-bg-positive-10); }
+    100% { border-color: var(--color-border-white-20); background-color: var(--color-bg-white-5); }
+}
+
+.upload-impulse {
+    animation: uploadImpulse 0.6s ease-in-out 3 !important;
+}
+

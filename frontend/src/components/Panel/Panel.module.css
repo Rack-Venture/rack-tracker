@@ -1,0 +1,57 @@
+.panelContainer{
+    width: 100%;
+    height: auto;
+    padding: 2.4rem;
+    background-color: var(--color-bg-surface-80);
+    border: solid 1px var(--color-bg-white-5);
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2.4rem;
+
+}
+
+.panelHeader{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    align-items: center;
+    width: 100%;
+}
+
+.headerPrefix{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.headerSuffix{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.icon{
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.panelLable{
+    color: var(--color-text);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 2.8rem;
+}
+
+.panelBody{
+    width: 100%;
+}
+
+.panelContainer:focus {
+    outline: none;
+    border-color: var(--color-bg-positive);
+}

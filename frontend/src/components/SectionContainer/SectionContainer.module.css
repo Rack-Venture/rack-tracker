@@ -1,0 +1,31 @@
+.sectionContainer {
+    min-height: 100vh;
+    padding: 6rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4.8rem;
+    max-width: var(--width-container);
+    margin: 0 auto;
+}
+
+.sectionIntro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.sectionHeading {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+}
+
+.sectionDescription {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-sub);
+}

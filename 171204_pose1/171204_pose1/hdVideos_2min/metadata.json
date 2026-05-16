@@ -1,0 +1,38 @@
+{
+  "description": "CMU Panoptic Studio 171204_pose1 HD 영상 2분 트리밍 클립",
+  "dataset": "171204_pose1",
+  "source_dir": "hdVideos",
+  "output_dir": "hdVideos_2min",
+  "trim_duration_sec": 120,
+  "trim_duration_hms": "00:02:00",
+  "codec": "copy (무손실 스트림 복사, 재인코딩 없음)",
+  "created_at": "2026-04-15T14:22:51",
+  "ffmpeg_version": "7.1-essentials_build-www.gyan.dev",
+  "video_spec": {
+    "resolution": "1920x1080",
+    "fps": 29.97,
+    "source_duration_sec": 1056.42,
+    "source_duration_hms": "00:17:36.42"
+  },
+  "purpose": "#29 두 동영상 스켈레톤 추출 및 3D 합성 실험 준비 - MediaPipe 처리 부하 경감용 단축 클립",
+  "clips": [
+    {
+      "name": "hd_00_11_2min.mp4",
+      "source": "hd_00_11.mp4",
+      "camera_id": "00_11",
+      "source_duration_sec": 1056.42,
+      "trimmed_duration_sec": 120,
+      "size_bytes": 223949416,
+      "size_mb": 213.6
+    },
+    {
+      "name": "hd_00_21_2min.mp4",
+      "source": "hd_00_21.mp4",
+      "camera_id": "00_21",
+      "source_duration_sec": 1056.42,
+      "trimmed_duration_sec": 120,
+      "size_bytes": 319238881,
+      "size_mb": 304.4
+    }
+  ]
+}

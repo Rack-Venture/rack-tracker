@@ -1,0 +1,36 @@
+.RawSkeletonJsonConatiner{
+    background-color: var(--color-surface-2);
+    color: var(--color-text-link);
+    width: 100%;
+    height: 50rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+.RawSkeletonJsonConatiner::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.RawSkeletonJsonConatiner::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.RawSkeletonJsonConatiner::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 99px;
+}
+
+.RawSkeletonJsonConatiner::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent, rgba(99, 179, 237, 0.6));
+}
+
+.RawSkeletonJson{
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}

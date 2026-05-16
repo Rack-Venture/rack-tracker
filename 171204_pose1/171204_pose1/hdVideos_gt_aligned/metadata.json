@@ -1,0 +1,85 @@
+{
+  "description": "GT 동기화 클립 — 앞 118 프레임 제거, GT 범위(118~3596)와 1:1 대응",
+  "created_at": "2026-04-15T14:31:44",
+  "ffmpeg_version": "7.1-essentials_build-www.gyan.dev",
+  "alignment": {
+    "fps": 29.97,
+    "cut_frames": 118,
+    "cut_sec": 3.937271,
+    "clip_start_frame": 118,
+    "clip_end_frame": 3596,
+    "clip_duration_sec": 116.062729
+  },
+  "gt": {
+    "source_tar": "hdPose3d_stage1_coco19.tar",
+    "output_dir": "hdPose3d_2min",
+    "frame_range": [
+      118,
+      3596
+    ],
+    "extracted": 3479,
+    "skipped": 0
+  },
+  "clips": [
+    {
+      "name": "hd_00_00_gt.mp4",
+      "source": "hd_00_00_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 333304435,
+      "size_mb": 317.9
+    },
+    {
+      "name": "hd_00_01_gt.mp4",
+      "source": "hd_00_01_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 332535574,
+      "size_mb": 317.1
+    },
+    {
+      "name": "hd_00_02_gt.mp4",
+      "source": "hd_00_02_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 279963856,
+      "size_mb": 267.0
+    },
+    {
+      "name": "hd_00_03_gt.mp4",
+      "source": "hd_00_03_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 331730908,
+      "size_mb": 316.4
+    },
+    {
+      "name": "hd_00_04_gt.mp4",
+      "source": "hd_00_04_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 286999057,
+      "size_mb": 273.7
+    },
+    {
+      "name": "hd_00_05_gt.mp4",
+      "source": "hd_00_05_2min.mp4",
+      "start_frame": 118,
+      "end_frame": 3596,
+      "start_sec": 3.937271,
+      "duration_sec": 116.062729,
+      "size_bytes": 347320217,
+      "size_mb": 331.2
+    }
+  ]
+}

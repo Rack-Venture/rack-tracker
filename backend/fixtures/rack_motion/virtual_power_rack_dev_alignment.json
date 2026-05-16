@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "rack_motion.rack_alignment_summary.v1",
+  "rackAlignmentId": "virtual_power_rack_dev_alignment",
+  "status": "dev_assumption",
+  "rackDimensionsM": {
+    "width": 1.22,
+    "depth": 1.3,
+    "height": 2.3
+  },
+  "jcupHeightsM": [1.08],
+  "safetyPinHeightsM": [0.64],
+  "displayUnit": "cm",
+  "captureToRackStatus": "identity_assumed",
+  "qualityMetrics": [
+    {
+      "metricName": "rack_alignment_status",
+      "value": "dev_assumption",
+      "status": "warning",
+      "policyId": "rack_motion.stage1.dev_alignment",
+      "detail": {
+        "inputType": "synthetic_fixture",
+        "productionGrade": false
+      }
+    }
+  ]
+}

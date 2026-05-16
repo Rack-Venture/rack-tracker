@@ -1,0 +1,1601 @@
+.contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.primaryGrid {
+    display: grid;
+    grid-template-columns: minmax(32rem, 40rem) 2fr;
+    gap: 2.4rem;
+    align-items: start;
+}
+
+.settingsPanelExpanded {
+    align-self: start;
+}
+
+.panelContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.uploadDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transform-origin: top center;
+    animation: revealUploadDetails 220ms ease-out;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.fieldLabel {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-sub);
+}
+
+.input {
+    width: 100%;
+    min-height: 4.4rem;
+    padding: 0 1.2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    transition:
+        border-color 160ms ease,
+        background-color 160ms ease,
+        box-shadow 160ms ease,
+        color 160ms ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.input:hover,
+.listboxTrigger:hover {
+    background: var(--color-bg-white-10);
+    border-color: var(--color-border-white-20);
+}
+
+.input:focus-visible,
+.listboxTrigger:focus-visible {
+    outline: none;
+    border-color: var(--color-border-positive-50);
+    background: var(--color-bg-white-10);
+    box-shadow: 0 0 0 0.3rem var(--color-bg-positive-10);
+}
+
+.input:disabled,
+.listboxTrigger:disabled {
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+}
+
+.input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.input[type='number']::-webkit-outer-spin-button,
+.input[type='number']::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.numberField {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.listbox {
+    position: relative;
+}
+
+.listboxTrigger {
+    width: 100%;
+    min-height: 4.4rem;
+    padding: 0 4.6rem 0 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    border: 1px solid var(--color-border-white-10);
+    border-radius: var(--border-radius);
+    background: var(--color-bg-negative);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    transition:
+        border-color 160ms ease,
+        background-color 160ms ease,
+        box-shadow 160ms ease,
+        color 160ms ease;
+}
+
+.listboxTriggerOpen {
+    border-color: var(--color-border-positive-50);
+    background: var(--color-bg-white-10);
+    box-shadow: 0 0 0 0.3rem var(--color-bg-positive-10);
+}
+
+.listboxValue {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listboxPopover {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0.6rem;
+    border: 1px solid var(--color-border-white-10);
+    border-radius: calc(var(--border-radius) + 0.4rem);
+    background: color-mix(in srgb, var(--color-surface-2) 92%, black 8%);
+    box-shadow: 0 1.2rem 3.2rem var(--color-bg-black-40);
+    backdrop-filter: blur(12px);
+}
+
+.listboxOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.listboxOption {
+    width: 100%;
+    min-height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    color: var(--color-text-sub-2);
+    background: transparent;
+    font-size: var(--font-size-sm);
+    text-align: left;
+    transition:
+        border-color 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease;
+}
+
+.listboxOption:hover,
+.listboxOption:focus-visible {
+    outline: none;
+    border-color: var(--color-border-white-10);
+    background: var(--color-bg-white-5);
+    color: var(--color-text);
+}
+
+.listboxOptionSelected {
+    border-color: var(--color-border-positive-30);
+    background: var(--color-bg-positive-10);
+    color: var(--color-text);
+}
+
+.listboxCheck {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-round);
+    background: var(--color-bg-positive-20);
+    color: var(--color-text-positive);
+    font-size: var(--font-size-xxm);
+    font-weight: var(--font-weight-bold);
+}
+
+.selectIcon {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-right: 1.5px solid var(--color-text-sub);
+    border-bottom: 1.5px solid var(--color-text-sub);
+    transform: translateY(-65%) rotate(45deg);
+    pointer-events: none;
+    transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.selectIconOpen {
+    transform: translateY(-30%) rotate(225deg);
+    border-color: var(--color-text-positive);
+}
+
+.numberInput {
+    padding-right: 8.6rem;
+}
+
+.stepperInline {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transform: translateY(-50%);
+}
+
+.stepperAction {
+    min-width: 1.6rem;
+    height: 2.8rem;
+    display: grid;
+    place-items: center;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--color-text-sub-2);
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    opacity: 0.82;
+    transition:
+        color 160ms ease,
+        opacity 160ms ease,
+        transform 160ms ease;
+}
+
+.stepperAction:hover {
+    color: var(--color-text-positive);
+    opacity: 1;
+}
+
+.stepperAction:focus-visible {
+    outline: none;
+    color: var(--color-text-positive);
+    opacity: 1;
+    text-shadow: 0 0 1.2rem var(--color-bg-positive);
+}
+
+.stepperAction:active {
+    transform: translateY(1px);
+}
+
+.stepperDivider {
+    width: 1px;
+    height: 1.6rem;
+    background: var(--color-border-white-10);
+}
+
+.inlineOptions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.optionButton,
+.optionButtonDisabled {
+    flex: 1;
+    min-height: 4.4rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+.optionButtonActive {
+    border-color: var(--color-border-positive-50);
+    color: var(--color-text-positive);
+    background: var(--color-bg-positive-10);
+}
+
+.optionButtonDisabled {
+    color: var(--color-text-disabled);
+}
+
+.errorBox {
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.08);
+    color: #fca5a5;
+    font-size: var(--font-size-sm);
+}
+
+.presetSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.presetDivider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-sub);
+    font-size: var(--font-size-xm);
+}
+
+.presetDivider::before,
+.presetDivider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.presetOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.presetButton {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 150ms, background 150ms;
+}
+
+.presetButton:hover {
+    border-color: var(--color-text-sub);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.presetButtonLabel {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.presetButtonDesc {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-sub);
+}
+
+.presetActive {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    animation: revealUploadDetails 220ms ease-out;
+}
+
+.presetActiveInfo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.presetActiveLabel {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-sub);
+    white-space: nowrap;
+}
+
+.presetActiveName {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    flex: 1;
+}
+
+.presetClearBtn {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-sub);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius);
+    transition: color 150ms;
+}
+
+.presetClearBtn:hover:not(:disabled) {
+    color: var(--color-text);
+}
+
+.presetClearBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+@keyframes revealUploadDetails {
+    from {
+        opacity: 0;
+        transform: translateY(-0.8rem) scaleY(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+.progressPanelContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.progressPanelBody {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.progressPanel {
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ── Status row ── */
+.ppStatusRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.ppBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1rem 0.5rem 0.8rem;
+    border-radius: var(--border-radius-round);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.01em;
+    transition: border-color 300ms ease, background 300ms ease, color 300ms ease;
+}
+
+.ppBadge[data-state="active"] {
+    border-color: var(--color-border-positive-30);
+    background: var(--color-bg-positive-10);
+    color: var(--color-text-positive);
+}
+
+.ppBadge[data-state="done"] {
+    border-color: color-mix(in srgb, var(--color-success) 30%, transparent);
+    background: color-mix(in srgb, var(--color-success) 10%, transparent);
+    color: var(--color-success-fg);
+}
+
+.ppBadge[data-state="error"] {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.08);
+    color: #fca5a5;
+}
+
+.ppBadgeDot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.ppBadge[data-state="active"] .ppBadgeDot {
+    animation: ppDotPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes ppDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.45; transform: scale(0.6); }
+}
+
+.ppMeta {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xm);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Hint (placeholder only) ── */
+.ppHint {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* ── Segmented arc ring ── */
+.ppSegBar {
+    flex: 1;
+    min-height: 12rem;
+    max-height: 20rem;
+    display: block;
+}
+
+.ppSeg {
+    stroke: var(--color-border-white-15, rgba(255,255,255,0.15));
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke 300ms ease, opacity 300ms ease;
+}
+
+.ppSeg[data-state="pending"] {
+    stroke: var(--color-border-white-10);
+}
+
+.ppSeg[data-state="active"] {
+    stroke: var(--color-text-positive);
+    animation: ppSegPulse 1.8s ease-in-out infinite;
+}
+
+/* active-slot: analyzing 세그먼트의 슬롯(배경 arc) — 진행률 오버레이와 함께 사용 */
+.ppSeg[data-state="active-slot"] {
+    stroke: var(--color-border-white-15, rgba(255,255,255,0.15));
+}
+
+.ppSeg[data-state="done"] {
+    stroke: var(--color-success);
+}
+
+@keyframes ppSegPulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* analyzing 세그먼트 위에 덮이는 processedFrames 비율 fill */
+.ppSegFill {
+    stroke: var(--color-text-positive);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke-dasharray 400ms ease;
+    opacity: 0.9;
+}
+
+/* ── Timeline stepper ── */
+.ppSteps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.ppStep {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.ppStepIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ppStepNum {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+    transition: border-color 300ms ease, background 300ms ease, color 300ms ease, box-shadow 300ms ease;
+}
+
+.ppStep[data-state="active"] .ppStepNum {
+    border-color: var(--color-border-positive-50);
+    background: var(--color-bg-positive-10);
+    color: var(--color-text-positive);
+    box-shadow: 0 0 0 3px var(--color-bg-positive-10);
+}
+
+.ppStep[data-state="done"] .ppStepNum {
+    border-color: color-mix(in srgb, var(--color-success) 50%, transparent);
+    background: color-mix(in srgb, var(--color-success) 15%, transparent);
+    color: var(--color-success-fg);
+}
+
+.ppStepLine {
+    flex: 1;
+    width: 1.5px;
+    min-height: 1.4rem;
+    background: var(--color-border-white-10);
+    margin: 0.2rem 0;
+    transition: background 300ms ease;
+}
+
+.ppStep[data-state="done"] .ppStepLine {
+    background: color-mix(in srgb, var(--color-success) 22%, transparent);
+}
+
+.ppStepBody {
+    padding: 0.15rem 0 1.8rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+}
+
+.ppStep:last-child .ppStepBody {
+    padding-bottom: 0;
+}
+
+.ppStepLabel {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: 2.4rem;
+    transition: color 200ms ease, font-weight 200ms ease;
+}
+
+.ppStep[data-state="active"] .ppStepLabel {
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+.ppStep[data-state="done"] .ppStepLabel {
+    color: var(--color-text-sub-2);
+}
+
+.ppStepTime {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xm);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    line-height: 2.4rem;
+    transition: color 200ms ease;
+}
+
+.ppStep[data-state="done"] .ppStepTime {
+    color: var(--color-success-fg);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ── Conveyor belt dual-track (analyzing 스텝 전용) ── */
+.ppDetailRows {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: 0.1rem 0 0;
+    padding: 0;
+}
+
+.ppDetailRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ppDetailLabel {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+}
+
+.ppDetailValue {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-sub-2);
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-weight-bold);
+}
+
+.ppDetailHint {
+    color: var(--color-text-muted);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.ppConveyor {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+}
+
+.ppConveyorRow {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr) minmax(11rem, 12.5rem);
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.ppConveyorLabel {
+    text-align: right;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+    letter-spacing: 0.01em;
+}
+
+.ppConveyorTrack {
+    height: 0.25rem;
+    border-radius: 2px;
+    background: var(--color-border-white-10);
+    overflow: hidden;
+    position: relative;
+}
+
+.ppConveyorTrack[data-live="true"] {
+    background: color-mix(in srgb, var(--color-text-positive) 10%, var(--color-border-white-10));
+}
+
+.ppConveyorActivityFill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: 2px;
+    opacity: 0.32;
+    transition: width 220ms ease, opacity 220ms ease;
+}
+
+.ppConveyorActivityFill[data-kind="frame"] {
+    background: rgba(96, 165, 250, 0.92);
+}
+
+.ppConveyorActivityFill[data-kind="pose"] {
+    background: rgba(52, 211, 153, 0.96);
+}
+
+.ppConveyorActivityFill[data-kind="skeleton"] {
+    background: rgba(250, 204, 21, 0.92);
+}
+
+.ppConveyorActivityFill[data-kind="benchmark"] {
+    background: rgba(251, 146, 60, 0.92);
+}
+
+.ppConveyorActivityFill[data-kind="coordinator"] {
+    background: rgba(167, 139, 250, 0.92);
+}
+
+.ppConveyorActivityFill[data-kind="triangulator"] {
+    background: rgba(0, 212, 255, 0.92);
+}
+
+.ppConveyorActivityFill[data-kind="collector"] {
+    background: rgba(148, 163, 184, 0.88);
+}
+
+.ppConveyorQueueFill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--color-success) 28%, transparent);
+    opacity: 0.45;
+}
+
+.ppConveyorQueueFill[data-level="mid"] {
+    background: rgba(251, 191, 36, 0.38);
+}
+
+.ppConveyorQueueFill[data-level="high"] {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+/* Extract 트랙: 프로듀서가 앞에서 계속 흐르는 스크롤 애니메이션 */
+.ppConveyorFlow {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        var(--color-text-positive) 5px,
+        var(--color-text-positive) 8px
+    );
+    opacity: 0.35;
+    animation: ppConveyorScroll 1.0s linear infinite;
+}
+
+.ppConveyorFlow[data-live="true"] {
+    opacity: 0.58;
+}
+
+.ppConveyorFlow[data-kind="frame"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(96, 165, 250, 0.96) 5px,
+        rgba(96, 165, 250, 0.96) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="pose"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(52, 211, 153, 0.98) 5px,
+        rgba(52, 211, 153, 0.98) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="skeleton"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(250, 204, 21, 0.96) 5px,
+        rgba(250, 204, 21, 0.96) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="benchmark"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(251, 146, 60, 0.96) 5px,
+        rgba(251, 146, 60, 0.96) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="coordinator"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(167, 139, 250, 0.96) 5px,
+        rgba(167, 139, 250, 0.96) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="triangulator"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(0, 212, 255, 0.96) 5px,
+        rgba(0, 212, 255, 0.96) 8px
+    );
+}
+
+.ppConveyorFlow[data-kind="collector"] {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(148, 163, 184, 0.92) 5px,
+        rgba(148, 163, 184, 0.92) 8px
+    );
+}
+
+@keyframes ppConveyorScroll {
+    from { background-position: 0 0; }
+    to   { background-position: 13px 0; }
+}
+
+/* Extract 트랙 완료: 꽉 찬 solid 바 */
+.ppConveyorDone {
+    height: 100%;
+    width: 100%;
+    background: var(--color-success);
+    opacity: 0.5;
+}
+
+.ppConveyorMeta {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+}
+
+.ppConveyorCount {
+    color: var(--color-text-sub-2);
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+.ppConveyorRow[data-live="true"] .ppConveyorCount,
+.ppConveyorRow[data-live="true"] .ppConveyorLabel {
+    color: var(--color-text);
+}
+
+.ppConveyorDetail {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.ppConveyorQueueTag {
+    padding: 0.05rem 0.45rem;
+    border-radius: var(--border-radius-round);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-black-20, rgba(0,0,0,0.2));
+    color: var(--color-text-sub);
+}
+
+/* 파이프라인 처리 프레임 카운터 (totalFrames 없이 processedFrames만 표시) */
+.ppConveyorFrameCount {
+    margin-top: 0.25rem;
+    padding-left: calc(4rem + 0.6rem);
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+    letter-spacing: 0.01em;
+}
+
+/* ── Summary facts ── */
+.ppFacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0 0.8rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--color-border-white-5);
+}
+
+.ppFacts span {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    gap: 0.4rem;
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.ppFactLabel {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xxm);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.ppFactValue {
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ── Dual video upload row ── */
+.videoUploadRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.videoUploadCol {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.videoLabel {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ── Pipeline progress wrapper ── */
+.dualProgressContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.progressCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 0;
+}
+
+.progressColHeader {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-border-white-10);
+    flex-shrink: 0;
+}
+
+.progressColDivider {
+    width: 1px;
+    background: var(--color-border-white-10);
+    align-self: stretch;
+}
+
+/* ── Pipeline topology diagram ── */
+.topoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.topoParallelRow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+}
+
+.topoParallelDivider {
+    width: 1px;
+    background: var(--color-border-white-10);
+    margin: 0 1rem;
+    align-self: stretch;
+}
+
+.topoTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.topoTrackHeader {
+    font-size: var(--font-size-xxm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+/* Individual topology node */
+.topoNode {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    transition: border-color 300ms ease, background 300ms ease;
+}
+
+.topoNode[data-live="true"] {
+    border-color: color-mix(in srgb, var(--color-text-positive) 25%, transparent);
+    background: color-mix(in srgb, var(--color-text-positive) 4%, var(--color-bg-negative));
+}
+
+.topoNode[data-done="true"] {
+    border-color: color-mix(in srgb, var(--color-success) 25%, transparent);
+    background: color-mix(in srgb, var(--color-success) 4%, var(--color-bg-negative));
+}
+
+.topoNode[data-skipped="true"] {
+    opacity: 0.45;
+    border-style: dashed;
+}
+
+.topoNodeLabel {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono, monospace);
+    letter-spacing: 0.01em;
+}
+
+.topoNodeCount {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-sub-2);
+    transition: color 200ms ease;
+}
+
+.topoNode[data-live="true"] .topoNodeCount {
+    color: var(--color-text);
+}
+
+.topoNode[data-done="true"] .topoNodeCount {
+    color: var(--color-success-fg);
+}
+
+.topoNodeDetail {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Mini activity bar inside node */
+.topoNodeBar {
+    height: 0.2rem;
+    border-radius: 2px;
+    background: var(--color-border-white-5);
+    overflow: hidden;
+    margin-top: 0.3rem;
+}
+
+.topoNodeBarFlow {
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        var(--color-text-positive) 5px,
+        var(--color-text-positive) 8px
+    );
+    opacity: 0.6;
+    animation: ppConveyorScroll 1.0s linear infinite;
+}
+
+.topoNodeBarDone {
+    height: 100%;
+    width: 100%;
+    background: var(--color-success);
+    opacity: 0.55;
+}
+
+/* Convergence arrow row (two lines meeting at center) */
+.topoConvergeRow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 1.6rem;
+    padding: 0 1rem;
+}
+
+.topoConvergeLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-white-20));
+}
+
+.topoConvergeLine:last-child {
+    background: linear-gradient(90deg, var(--color-border-white-20), transparent);
+    transform: scaleX(-1);
+}
+
+.topoConvergePoint {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    padding: 0 0.6rem;
+    line-height: 1;
+}
+
+/* Simple arrow between sequential nodes */
+.topoArrowDown {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    opacity: 0.5;
+}
+
+/* Overall progress bar */
+.topoProgressWrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.4rem;
+}
+
+.topoProgressBar {
+    flex: 1;
+    height: 0.35rem;
+    border-radius: 2px;
+    background: var(--color-border-white-10);
+    overflow: hidden;
+}
+
+.topoProgressFill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--color-text-positive);
+    transition: width 500ms ease;
+    min-width: 2px;
+}
+
+.topoProgressFill[data-done="true"] {
+    background: var(--color-success);
+}
+
+.topoProgressLabel {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-sub-2);
+    white-space: nowrap;
+    min-width: 4rem;
+    text-align: right;
+}
+
+/* Result rows after completion */
+.topoResultRow {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0.3rem 0;
+}
+
+.topoResultCam {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    min-width: 6rem;
+    flex-shrink: 0;
+}
+
+.topoResultVal {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-sub-2);
+}
+
+.topoResultMuted {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Benchmark / error section ── */
+.bmSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+}
+
+.bmSectionTitle {
+    font-size: var(--font-size-xxm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.bmSubSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--color-border-white-5);
+}
+
+.bmSubTitle {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-sub);
+    letter-spacing: 0.01em;
+}
+
+.bmRows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.bmRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.bmRowStack {
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.bmLabel {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xm);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.bmValue {
+    color: var(--color-text-sub-2);
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-width: 0;
+    text-align: right;
+}
+
+.bmDim {
+    color: var(--color-text-muted);
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+
+.bmValueWarn {
+    color: #fca5a5;
+}
+
+.bmFallbackTag {
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-round);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    background: rgba(251, 191, 36, 0.08);
+    color: #fde68a;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.02em;
+}
+
+.bmDelegateErrors {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.bmDelegateError {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-sub-2);
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* ── Timing bars ── */
+.bmTimingList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.bmTimingRow {
+    display: grid;
+    grid-template-columns: 9rem 1fr auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.8rem;
+    row-gap: 0.2rem;
+    align-items: center;
+}
+
+.bmTimingLabel {
+    font-size: var(--font-size-xm);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bmTimingBarWrap {
+    height: 0.4rem;
+    border-radius: 2px;
+    background: var(--color-border-white-10);
+    overflow: hidden;
+}
+
+.bmTimingBar {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--color-text-positive);
+    min-width: 2px;
+    transition: width 400ms ease;
+}
+
+.bmTimingTotal {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-sub-2);
+    white-space: nowrap;
+}
+
+.bmTimingDetail {
+    grid-column: 2 / -1;
+    font-size: 1.1rem;
+}
+
+/* ── Error section ── */
+.bmErrorRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.bmErrorCode {
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: #fca5a5;
+}
+
+.bmErrorMessage {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-sub-2);
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* ── Raw JSON ── */
+.bmRawDetails {
+    border-top: 1px solid var(--color-border-white-5);
+    padding-top: 0.8rem;
+}
+
+.bmRawSummary {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.bmRawSummary::-webkit-details-marker { display: none; }
+
+.bmRawSummary::before {
+    content: '▶';
+    font-size: 1rem;
+    transition: transform 160ms ease;
+}
+
+details[open] .bmRawSummary::before {
+    transform: rotate(90deg);
+}
+
+.bmRawCopyBtn {
+    margin-left: auto;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-white-10, rgba(255,255,255,0.1));
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+    white-space: nowrap;
+}
+
+.bmRawCopyBtn:hover {
+    background: var(--color-bg-black-40, rgba(255,255,255,0.08));
+    border-color: var(--color-border-white-20, rgba(255,255,255,0.2));
+    color: var(--color-text-sub-2);
+}
+
+.bmRawPre {
+    margin: 0.8rem 0 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: var(--color-bg-black-40, rgba(0,0,0,0.4));
+    color: var(--color-text-sub-2);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    max-height: 32rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.bmRawPre::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.bmRawPre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bmRawPre::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 3px;
+}
+
+.bmRawPre::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.bmRawPre::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* ── Fetch button ── */
+.bmFetchBtn {
+    align-self: flex-start;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-negative);
+    color: var(--color-text-sub-2);
+    font-size: var(--font-size-xm);
+    font-weight: var(--font-weight-bold);
+    transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.bmFetchBtn:hover:not(:disabled) {
+    border-color: var(--color-border-white-20);
+    background: var(--color-bg-white-5);
+    color: var(--color-text);
+}
+
+.bmFetchBtn:disabled {
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .primaryGrid,
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .videoUploadRow {
+        grid-template-columns: 1fr;
+    }
+
+    .dualProgressContent {
+        grid-template-columns: 1fr;
+        gap: 2.4rem 0;
+    }
+
+    .progressColDivider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .ppConveyorRow {
+        grid-template-columns: 3.4rem minmax(0, 1fr);
+        row-gap: 0.25rem;
+    }
+
+    .ppConveyorMeta {
+        grid-column: 2;
+    }
+}

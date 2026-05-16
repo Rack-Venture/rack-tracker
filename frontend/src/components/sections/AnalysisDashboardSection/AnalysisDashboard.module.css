@@ -1,0 +1,209 @@
+.contents {
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+}
+
+.feedbackSurface,
+.placeholder {
+    width: 100%;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-black-50);
+}
+
+.feedbackSurface {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    min-height: 50rem;
+    max-height: 50rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+.feedbackSurface::-webkit-scrollbar {
+    width: 4px;
+}
+
+.feedbackSurface::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.feedbackSurface::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 99px;
+    transition: background 0.2s ease;
+}
+
+.feedbackSurface::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent, rgba(99, 179, 237, 0.6));
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    color: var(--color-text-sub);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    border: 1px dashed var(--color-border-positive-30);
+    background-color: var(--color-bg-positive-5);
+    min-height: auto;
+}
+
+.placeholderIcon {
+    color: var(--color-accent);
+    font-size: var(--font-size-xl);
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.detailList {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.detailRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.6rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--color-border-white-5);
+}
+
+.detailRow:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.detailRow dt {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.detailRow dd {
+    margin: 0;
+    color: var(--color-text);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+    text-align: right;
+}
+
+.listBlock {
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--color-border-white-5);
+}
+
+.listBlock:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.rowHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.listBlock p {
+    margin: 0.8rem 0 0;
+    color: var(--color-text-sub-2);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.listBlock small {
+    display: block;
+    margin-top: 0.6rem;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xm);
+}
+
+.itemTitle {
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+.itemValue {
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+}
+
+.severityBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-round);
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--color-border-white-10);
+    background: var(--color-bg-black-50);
+    color: var(--color-text-sub);
+}
+
+.severityBadge[data-severity='high'],
+.severityBadge[data-severity='critical'] {
+    color: #ffb4b4;
+    border-color: rgba(229, 62, 62, 0.4);
+    background: rgba(229, 62, 62, 0.12);
+}
+
+.severityBadge[data-severity='medium'],
+.severityBadge[data-severity='warning'] {
+    color: #ffd38a;
+    border-color: rgba(214, 158, 46, 0.4);
+    background: rgba(214, 158, 46, 0.12);
+}
+
+.severityBadge[data-severity='low'],
+.severityBadge[data-severity='info'] {
+    color: #8fe3b0;
+    border-color: rgba(56, 161, 105, 0.35);
+    background: rgba(56, 161, 105, 0.12);
+}
+
+.downloadError {
+    margin: 0 0 1.2rem;
+    color: #ffb4b4;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+@media (max-width: 1280px) {
+    .contents {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .contents {
+        grid-template-columns: 1fr;
+    }
+
+    .detailRow,
+    .rowHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detailRow dd {
+        text-align: left;
+    }
+}
