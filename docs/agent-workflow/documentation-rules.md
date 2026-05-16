@@ -56,10 +56,11 @@
 
 ## Archive Policy
 
-- `docs/mvp-v1/` and `docs/mvp-v2/` are historical archives migrated from the predecessor repository (rack-tracker-forked).
+- `docs/archive/mvp-v1/` and `docs/archive/mvp-v2/` are historical archives migrated from the predecessor repository (rack-tracker-forked).
   - Issue numbers inside those documents refer to the old repository's GitHub issues, not rack-venture issues.
   - Do not create new management documents under these directories.
   - Do not modify archive documents to update issue numbers; the mismatch is expected and acceptable.
+- `docs/mvp-v2/` is the rack-venture-specific MVP v2 document space.
 - `docs/issues/` is the sole location for rack-venture management documents.
   - Issue numbers must correspond to GitHub issues in the rack-venture organization repository.
   - Workflow: create a rack-venture GitHub issue first → use the assigned number for the branch name and management document file name → create `docs/issues/{type}/{N}-{slug}.md`.
