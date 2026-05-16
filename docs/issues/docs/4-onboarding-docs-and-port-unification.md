@@ -51,6 +51,14 @@
 
 ---
 
+### docs: 온보딩 문서에 upstream remote 등록 명령 추가 (#4)
+
+#### Changes
+- `docs/onboarding.md` — "레포 포크 및 클론" 섹션에 `git remote add upstream` 명령 추가
+- `docs/onboarding.md` — 세팅 완료 체크리스트에 upstream remote 등록 항목 추가
+
+---
+
 ## Management Notes
 
 ### Follow-up Candidates

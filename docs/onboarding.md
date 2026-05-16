@@ -24,6 +24,7 @@
 # GitHub에서 포크한 뒤
 git clone https://github.com/<내-계정>/rack-tracker.git
 cd rack-tracker
+git remote add upstream https://github.com/Rack-Venture/rack-tracker.git
 ```
 
 ---
@@ -145,6 +146,7 @@ git config core.hooksPath .githooks
 ## 세팅 완료 체크리스트
 
 - [ ] Node.js, uv, gh 설치 완료
+- [ ] `git remote add upstream https://github.com/Rack-Venture/rack-tracker.git` 실행
 - [ ] `git config core.hooksPath .githooks` 실행
 - [ ] `frontend/npm install` 완료
 - [ ] `backend/uv sync` 완료
