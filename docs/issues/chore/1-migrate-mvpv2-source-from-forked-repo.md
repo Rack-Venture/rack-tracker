@@ -57,3 +57,23 @@ rack-tracker-forked(개인 작업 레포)에서 팀 협업 레포(rack-venture-r
 - docs/agent-workflow/ 신규 2개 파일(agent-commit-and-push-workflow.md, git-collaboration-convention.md)은 스킵 (git-rules.md가 커버)
 - 171204_pose1 영상/대용량 데이터는 별도 공유 예정
 
+### chore: mvp-v1 문서 마이그레이션 및 참조 문제 수정 (#1)
+
+> docs/mvp-v1 이식, read_docs.py 절대경로 → 상대경로, 대용량 파일 다운로드 스크립트 추가
+
+#### Scope
+- docs/mvp-v1/ (md 38개 + PDF 1개), backend/read_docs.py, scripts/download_data.py
+
+#### Changes
+- docs/mvp-v1/ 39개 파일 복사
+- backend/read_docs.py: 절대경로 → `Path(__file__).resolve().parent.parent` 기반 상대경로
+- scripts/download_data.py 신규 생성: Google Drive MANIFEST 기반 대용량 파일 다운로드
+  - `171204_pose1/171204_pose1/calibration_171204_pose1.json` 항목 등록 (ID 미기입 상태)
+  - `python scripts/download_data.py [--force]` 로 실행
+
+#### Verification
+- `python scripts/download_data.py` 실행 시 ID 미등록 항목 정상 건너뜀 확인
+
+#### Notes
+- calibration JSON의 Google Drive 파일 ID는 업로드 후 MANIFEST에 직접 입력 필요
+
