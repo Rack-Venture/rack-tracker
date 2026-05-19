@@ -68,6 +68,7 @@
 
 ## PR Rules
 
+- PR 생성 전 반드시 default branch 확인: `gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'`
 - PR source: `내계정/rack-tracker` → `type/이슈번호-description`
 - PR target: `Rack-Venture/rack-tracker` → `develop`
 - PR title format: `[TYPE] 작업 내용 요약 (#이슈번호)`

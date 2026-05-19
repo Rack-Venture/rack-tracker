@@ -1,0 +1,7 @@
+#!/bin/sh
+TMPFILE="$(git rev-parse --git-dir)/PUSH_REFS_TMP"
+cat > "$TMPFILE"
+powershell.exe -ExecutionPolicy Bypass -File "scripts/check-push-rules.ps1" -RemoteName "$1" -RemoteUrl "$2" -StdinFile "$TMPFILE"
+STATUS=$?
+rm -f "$TMPFILE"
+exit $STATUS
