@@ -77,6 +77,12 @@
 - Delete the branch immediately after merge
 - Keep the PR body aligned with the management document using the template from `docs/agent-workflow/templates.md`.
 
+## Local Develop Sync Rules
+
+- When updating the local `develop` branch, always fetch from `upstream` and merge `upstream/develop`, not `origin/develop`.
+- Use `git fetch upstream && git merge --ff-only upstream/develop` to keep the local baseline aligned with the authoritative source.
+- After syncing local `develop`, sync `origin/develop` with a matching push so the fork stays current.
+
 ## Prohibited Actions
 
 - Direct push to `main` or `develop`
